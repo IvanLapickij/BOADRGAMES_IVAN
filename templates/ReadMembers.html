@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>  <link href="/static/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <h1>Members Table</h1>
+  <h2 style="color: red;">List of Members in Table Form</h2>
+
+  <hr/>
+  {%- for message in get_flashed_messages() %}
+  <div class="alert alert-info">
+    {{ message }}
+  </div>
+  {%- endfor %}
+
+  <div class="table-responsive">
+    <table class="table" style="width:100%">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Membership Years</th>
+          <th>Phone</th>
+          <th>Status</th>
+          <th>Games Won</th>
+          <th>Favorite Game</th>
+          <th>Highest Score</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for member in students %}
+        <tr>
+          <td>{{ member.name }}</td>
+          <td>{{ member.membershipYears }}</td>
+          <td>{{ member.phone }}</td>
+          <td>{{ member.status }}</td>
+          <td>{{ member.gamesWon }}</td>
+          <td>{{ member.favoriteGame }}</td>
+          <td>{{ member.highestScore }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Add a New Member (<a href="{{ url_for('new') }}">Add Member</a>)</h3>
+
+  <h3>Return to Opening Page (<a href="{{ url_for('opening2') }}">Return</a>)</h3>
+
+</body>
+
+</html>

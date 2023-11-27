@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <h1>Add a Member</h1>
+  <h3 style="color: red;">Enter Details for the new Member and click Submit </h3>
+  <hr />
+
+  {%- for category, message in get_flashed_messages(with_categories=true) %}
+  <div class="alert alert-danger">
+    {{ message }}
+  </div>
+  {%- endfor %}
+
+  <form action="{{ request.path }}" method="post">
+    <label for="name">Name</label><br>
+    <input type="text" name="name" placeholder="Name" /><br>
+
+    <label for="age">Age</label><br>
+    <input type="text" name="age" placeholder="Age" /><br>  <!-- Add this line for the 'age' field -->
+
+    <label for="membershipYears">Membership Years</label><br>
+    <input type="text" name="membershipYears" placeholder="Membership Years" /><br>
+
+    <label for="phone">Phone</label><br>
+    <input type="text" name="phone" placeholder="Phone" /><br>
+
+    <label for="status">Status</label><br>
+    <input type="text" name="status" placeholder="Status" /><br>
+
+    <label for="gamesWon">Games Won</label><br>
+    <input type="text" name="gamesWon" placeholder="Games Won" /><br>
+
+    <label for="favoriteGame">Favorite Game</label><br>
+    <input type="text" name="favoriteGame" placeholder="Favorite Game" /><br>
+
+    <label for="highestScore">Highest Score</label><br>
+    <input type="text" name="highestScore" placeholder="Highest Score" /><br>
+
+    <input type="submit" value="Submit" />
+  </form>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BoardGames Club</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="preload" as="font">
+  <link href="/static/cloud-run-32-color.png" rel="icon" type="image/png" />
+  <link href="/static/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <h1>Welcome to BoardGames Club</h1>
+  <h2 style="color: red;">Please select from the available options</h2>
+
+  <h3>1. List All Members
+    <a href="{{ url_for('show_all') }}">List All Members</a>
+  </h3>
+
+  <h3>2. Add a Member (<a href="{{ url_for('new') }}">Add Member</a>)</h3>
+
+  <h3>3. Option to Insert Some Initial Table Data (<a href="{{ url_for('initial_table_data') }}">Add Initial Members</a>)</h3><br>
+  <h2>4. Search Options</h2>
+  <form action="{{ url_for('opening2') }}" method="post">
+    <label for="name">Name</label>
+    <input type="text" name="name" placeholder="Name" />
+    <input type="submit" name="Search_By_Name" value="Search By Name" /><br><br>
+  </form>
+
+  <form action="{{ url_for('opening2') }}" method="post">
+    <label for="city">City</label>
+    <input type="text" name="city" placeholder="City" />
+    <input type="submit" name="Search_By_City" value="Search By City" /><br><br>
+  </form>
+
+  <h2>5. Delete Option</h2>
+  <form action="{{ url_for('opening2') }}" method="post">
+    <label for="name">Name</label>
+    <input type="text" name="name" placeholder="Name" />
+    <input type="submit" name="Delete_Member" value="Delete Member" /><br><br>
+  </form>
+
+  <h2>6. Update Option</h2>
+  <form action="{{ url_for('opening2') }}" method="post">
+    <label for="name">Name</label>
+    <input type="text" name="name" placeholder="Name" />
+    <input type="submit" name="Update_Member" value="Update Member" /><br><br>
+  </form>
+
+  <h2>7. Increment Membership Years Option</h2>
+  <form action="{{ url_for('opening2') }}" method="post">
+    <label for="name">Name</label>
+    <input type="text" name="name" placeholder="Name" />
+    <input type="submit" name="Increment_Member_Age" value="Increment Member Age" /><br><br>
+  </form>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <h1>Updating Member</h1>
+
+  <h3 style="color: red;">Details about the Member whose data is being updated</h3>
+  <hr/>
+  <h2>{{member.name}}</h2>
+
+  <form action="{{ request.path }}" method="post">
+    <label for="name">Name</label><br>
+    <input type="text" name="name" placeholder="Name" value='{{member.name}}' /><br>
+
+    <label for="membershipYears">Membership Years</label><br>
+    <input type="text" name="membershipYears" placeholder="Membership Years" value='{{member.membershipYears}}' /><br>
+
+    <label for="phone">Phone</label><br>
+    <input type="text" name="phone" placeholder="Phone" value='{{member.phone}}' /><br>
+
+    <label for="status">Status</label><br>
+    <input type="text" name="status" placeholder="Status" value='{{member.status}}' /><br>
+
+    <label for="gamesWon">Games Won</label><br>
+    <input type="text" name="gamesWon" placeholder="Games Won" value='{{member.gamesWon}}' /><br>
+
+    <label for="favoriteGame">Favorite Game</label><br>
+    <input type="text" name="favoriteGame" placeholder="Favorite Game" value='{{member.favoriteGame}}' /><br>
+
+    <label for="highestScore">Highest Score</label><br>
+    <input type="text" name="highestScore" placeholder="Highest Score" value='{{member.highestScore}}' /><br>
+
+    <input type="submit" value="Confirm Update" />
+  </form>
+
+  <h2 style="color: red;">Return to Opening Page (<a href="{{ url_for('opening2') }}">Return</a>)</h2>
+
+</body>
+
+</html>
