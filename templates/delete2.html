@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+   <body>
+
+      <h1>Deleting Student 2</h1>
+
+      <h3 style="color: red;">Details about the Student to be deleted</h3>
+      <hr/>
+       <h2> {{student.name}}</h2>
+      <form action = "{{ request.path }}" method = "post">
+            <label for = "name">Name</label><br>
+            <input type = "text" name = "name" placeholder = name, value='{{student.name}}' /><br>
+            <label for = "city">City</label><br>
+            <input type = "text" Name = "city" placeholder = city, value='{{student.city}}' /><br>
+            <label for = "addr">Address</label><br>
+            <input type = "text" name="addr" placeholder = "Addr", value='{{student.addr}}' /><br>
+            <label for = "Age">Age</label><br>
+            <input type = "text" name = "age" placeholder = "age", value = '{{student.age}}' /><br>
+            <input type = "submit" value = "Confirm_Delete" />
+      </form>
+
+      <h2 style="color: red;">Return to Opening Page (<a href = "{{ url_for('opening2') }}">Return
+         </a>)</h2>
+
+   </body>
+</html>

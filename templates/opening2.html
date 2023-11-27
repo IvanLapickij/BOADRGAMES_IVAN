@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Congratulations | Cloud Run</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="preload" as="font">
+<link href="/static/cloud-run-32-color.png" rel="icon" type="image/png" />
+<link href="/static/style.css" rel="stylesheet" type="text/css" />
+</head>
+   <body>
+
+      <h1>Students Cloud Application </h1>
+      <h2 style="color: red;">Please select from the available options </h2>
+
+      <h3> 1. List All Students
+         <a href = "{{ url_for('show_all') }}">List All Students</a>
+      </h3>
+
+      <h3>2. Add a Student (<a href = "{{ url_for('new') }}">Add Student
+         </a>)</h3>
+
+      <h3>3. Option to Insert Some Initial Table Data  (<a href = "{{ url_for('initial_table_data') }}">Add Initial Students
+         </a>)</h3><br>
+      <h2>4. Search Options </h2>
+      <form action = "{{ request.path }}" method = "post">
+         <label for = "name">Name</label>
+         <input type = "text" name = "name" placeholder = "Name" />
+         <input type = "submit" name="Search_By_Name" value="Search_By_Name" /><br><br>
+      </form>
+
+      <form action = "{{ request.path }}" method = "post">
+         <label for = "city">Name</label>
+         <input type = "text" name = "city" placeholder = "City" />
+         <input type = "submit" name="Search_By_City" value="Search_By_City" /><br><br>
+      </form>
+
+      <h2>5. Delete Option </h2>
+      <form action = "{{ request.path }}" method = "post">
+         <label for = "name">Name</label>
+         <input type = "text" name = "name" placeholder = "Name" />
+         <input type = "submit" name="Delete_Student" value="Delete_Student" /><br><br>
+      </form>
+
+      <h2>6. Update Option </h2>
+      <form action = "{{ request.path }}" method = "post">
+         <label for = "name">Name</label>
+         <input type = "text" name = "name" placeholder = "Name" />
+         <input type = "submit" name="Update_Student" value="Update_Student" /><br><br>
+      </form>
+
+      <h2>7. Increment Student Age Option </h2>
+      <form action = "{{ request.path }}" method = "post">
+         <label for = "name">Name</label>
+         <input type = "text" name = "name" placeholder = "Name" />
+         <input type = "submit" name="Increment_Student_Age" value="Increment_Student_Age" /><br><br>
+      </form>
+
+
+   </body>
+</html>

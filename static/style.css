@@ -1,0 +1,94 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-display: fallback;
+    background: #F5F5F5; /* Light background color */
+    text-align: center; /* Center text */
+}
+
+.container {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero {
+    margin-top: 50px; /* Adjusted margin for better centering */
+}
+
+.hero .logo {
+    width: 140px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero .message {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 24px;
+    color: #333; /* Dark text color */
+}
+
+.details {
+    clear: both;
+    height: 400px;
+    line-height: 1.8;
+}
+
+.callout {
+    font-size: 14px;
+    color: #1967D2; /* Google Blue color */
+    font-weight: 600;
+    padding: 16px;
+    background: #E8F0FE; /* Light blue background */
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+code {
+    font-family: 'Roboto Mono', Courier, monospace;
+    color: #A30038; /* Dark red color for code */
+    background-color: #F8F8F8;
+    border: 1px solid #DDD;
+    border-radius: 2px;
+    padding: 6px;
+    font-weight: 500;
+}
+
+.cta {
+    padding: 52px 0;
+}
+
+.cta a {
+    color: #FFF; /* White text color */
+    text-decoration: none;
+    background-color: #4CAF50; /* Green background color */
+    padding: 12px;
+    margin: 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.cta a:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #333; /* Dark background color */
+        color: #FFF; /* White text color */
+    }
+
+    a {
+        color: #8AB4F8;
+    }
+
+    a:visited {
+        color: #b48af8;
+    }
+
+    .cta a {
+        color: white;
+    }
+}

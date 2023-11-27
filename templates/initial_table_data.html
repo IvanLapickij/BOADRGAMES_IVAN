@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+   <body>
+
+      <h1>Students Table - Add Initial Data</h1>
+      <h3 style="color: red;">Please Confirm you want to Add Some Initial Data to the Students Table</h3>
+
+      <hr/>
+
+      {%- for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            {{ message }}
+         </div>
+      {%- endfor %}
+
+
+      <form action = "{{ request.path }}" method = "post">
+         <input type = "submit" value = "Confirm that you wish add Data" />
+      </form>
+      <h3>Return to Opening Page (<a href = "{{ url_for('opening2') }}">Return
+         </a>)</h3>
+   </body>
+</html>
