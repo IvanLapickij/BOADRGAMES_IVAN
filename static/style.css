@@ -1,7 +1,59 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+    margin: 20px;
+    background: #f0f0f0 url('//img/boardgamesBG.jpg') no-repeat center center fixed;
+    background-size: cover;
     text-align: center;
+    background-color: #f0f0f0; /* Fallback color in case the image is not fully covered */
+}
+
+nav {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+h2 {
+    color: red;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+a {
+    color: red;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 .container {
@@ -65,6 +117,7 @@ th {
 .cta a:hover {
     background-color: #2980b9;
 }
+
 tr:hover {
     background-color: #f5f5f5;
 }

@@ -8,64 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="preload" as="font">
   <link href="/static/cloud-run-32-color.png" rel="icon" type="image/png" />
   <link href="/static/style.css" rel="stylesheet" type="text/css" />
-
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 20px;
-    }
-
-    nav {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    h1, h2, h3 {
-      color: #333;
-    }
-
-    h2 {
-      color: red;
-    }
-
-    form {
-      margin-bottom: 20px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    input {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 15px;
-      box-sizing: border-box;
-    }
-
-    input[type="submit"] {
-      background-color: #4CAF50;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    input[type="submit"]:hover {
-      background-color: #45a049;
-    }
-
-    a {
-      color: red;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
 </head>
-
 <body>
 
   <nav>
@@ -116,8 +59,12 @@
   <input type="submit" name="increment_years" value="Increment Membership" />
 </form>
 
+<!-- Display the highest scores chart -->
+<h2>Highest Scores Chart</h2>
+    <p></p>
+<!--<img src="{{ url_for('highest_scores_chart') }}?{{ url_for('static', filename='style.css') }}" alt="Highest Scores Chart">-->
 
-
+  </nav>
 </body>
 
 </html>

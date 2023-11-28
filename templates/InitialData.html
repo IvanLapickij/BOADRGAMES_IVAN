@@ -2,54 +2,7 @@
 <html lang="en">
 
 <head>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 20px;
-      background-color: #f7f7f7; /* Add a light background color */
-    }
-
-    h1 {
-      color: #333;
-    }
-
-    h3 {
-      color: red;
-    }
-
-    hr {
-      border: 1px solid #ccc;
-    }
-
-    .alert {
-      color: #721c24; /* Dark red text color for alerts */
-      background-color: #f8d7da; /* Light red background for alerts */
-      border: 1px solid #f5c6cb;
-      padding: 8px;
-      margin: 10px 0;
-    }
-
-    form {
-      margin-top: 20px;
-    }
-
-    input[type="submit"] {
-      background-color: #007bff; /* Blue color for the submit button */
-      color: white;
-      padding: 10px 15px;
-      cursor: pointer;
-      border: none;
-    }
-
-    input[type="submit"]:hover {
-      background-color: #0056b3; /* Darker blue color on hover */
-    }
-
-    a {
-      color: red;
-      text-decoration: none;
-    }
-  </style>
+  <link href="/static/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -65,7 +18,7 @@
   </div>
   {%- endfor %}
 
-  <form action="{{ request.path }}" method="post" style="text-align: center;">
+<form action="{{ url_for('initial_table_data') }}" method="post" style="max-width: 400px; margin: 20px auto;">
     <input type="submit" value="Confirm Add Initial Data" class="btn btn-primary" />
   </form>
 

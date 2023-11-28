@@ -2,48 +2,7 @@
 <html>
 
 <head>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 20px;
-    }
-
-    h1 {
-      color: #333;
-    }
-
-    form {
-      max-width: 400px;
-      margin: 20px 0;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    input {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 10px;
-      box-sizing: border-box;
-    }
-
-    input[type="submit"] {
-      background-color: #4CAF50;
-      color: white;
-      cursor: pointer;
-    }
-
-    .alert-danger {
-      color: #721c24;
-      background-color: #f8d7da;
-      border: 1px solid #f5c6cb;
-      padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 4px;
-    }
-  </style>
+  <link href="/static/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -58,7 +17,7 @@
   </div>
   {%- endfor %}
 
-  <form action="{{ request.path }}" method="post">
+<form action="{{ request.path }}" method="post" style="max-width: 400px; margin: 20px auto;">
     <label for="name">Name</label>
     <input type="text" name="name" placeholder="Ivan" />
 

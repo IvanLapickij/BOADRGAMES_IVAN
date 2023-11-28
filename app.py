@@ -1,6 +1,10 @@
 import os
 from flask import Flask, request, flash, url_for, redirect, render_template
 from flask_sqlalchemy import SQLAlchemy
+import matplotlib.pyplot as plt
+from io import BytesIO
+import base64
+
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///members.sqlite3'
@@ -180,11 +184,14 @@ def initial_table_data():
         db.session.commit()
         flash('Initial Table Data Added')
 
-        # Print the contents of the database for debugging
+        # After adding initial data, redirect to the chart page
+        return redirect(url_for('highest_scores_chart'))
+
     all_data = members.query.all()
     print("All data in the database:", all_data)
 
     return render_template('InitialData.html')
+
 
 @app.route('/new', methods=['GET', 'POST'])
 def new():
@@ -221,6 +228,33 @@ def new():
 
     return render_template('CreateMembers.html')
 
+@app.route('/highest_scores_chart', methods=['GET', 'POST'])
+def highest_scores_chart():
+    # Fetch data from the database
+    members_data = db.session.query(members.name, members.highestScore).all()
+
+    # Extract names and highest scores for plotting
+    names = [member.name for member in members_data]
+    highest_scores = [member.highestScore for member in members_data]
+
+    # Plotting the bar chart
+    plt.figure(figsize=(10, 6))
+    plt.bar(names, highest_scores, color='blue')
+    plt.xlabel('Member Names')
+    plt.ylabel('Highest Scores')
+    plt.title('Members Highest Scores Chart')
+    plt.xticks(rotation=45, ha='right')  # Rotate x-axis labels for better readability
+
+    # Save the plot to a BytesIO object
+    image_stream = BytesIO()
+    plt.savefig(image_stream, format='png')
+    image_stream.seek(0)
+    plt.close()
+
+    # Convert the image to base64 for embedding in HTML
+    image_base64 = base64.b64encode(image_stream.read()).decode('utf-8')
+
+    return render_template('highest_scores_chart.html', image_base64=image_base64)
 
 if __name__ == '__main__':
     server_port = os.environ.get('PORT', '8080')
