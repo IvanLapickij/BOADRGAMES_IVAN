@@ -22,7 +22,9 @@
   <h3>2. Add a Member (<a href="{{ url_for('new') }}">Add Member</a>)</h3>
 
   <h3>3. Option to Insert Some Initial Table Data (<a href="{{ url_for('initial_table_data') }}">Add Initial Members</a>)</h3><br>
+
   <h2>4. Search Options</h2>
+
   <form action="{{ url_for('opening2') }}" method="post">
     <label for="name">Name</label>
     <input type="text" name="name" placeholder="Name" />
@@ -30,10 +32,11 @@
   </form>
 
   <form action="{{ url_for('opening2') }}" method="post">
-    <label for="city">City</label>
-    <input type="text" name="city" placeholder="City" />
-    <input type="submit" name="Search_By_City" value="Search By City" /><br><br>
-  </form>
+  <label for="gender">Gender</label>
+  <input type="text" name="gender" placeholder="Gender" />
+  <input type="submit" name="Search_By_gender" value="Search By Gender" /><br><br>
+</form>
+
 
   <h2>5. Delete Option</h2>
   <form action="{{ url_for('opening2') }}" method="post">

@@ -15,13 +15,13 @@
 
       <form action = "{{ request.path }}" method = "post">
             <label for = "name">Name</label><br>
-            <input type = "text" name = "name" placeholder = name, value='{{student.name}}' /><br>
-            <label for = "city">City</label><br>
-            <input type = "text" Name = "city" placeholder = city, value='{{student.city}}' /><br>
-            <label for = "addr">Address</label><br>
-            <input type = "text" name="addr" placeholder = "Addr", value='{{student.addr}}' /><br>
-            <label for = "Age">Age</label><br>
-            <input type = "text" name = "age" placeholder = "age", value = '{{student.age}}' /><br>
+            <input type = "text" name = "name" placeholder = name, value='{{member.name}}' /><br>
+            <label for = "gender">Gender</label><br>
+            <input type = "text" Name = "gender" placeholder = gender, value='{{member.gender}}' /><br>
+            <label for = "status">Address</label><br>
+            <input type = "text" name="status" placeholder = "status", value='{{member.status}}' /><br>
+            <label for = "membershipYears">Membership Years</label><br>
+            <input type = "text" name = "membershipYears" placeholder = "membershipYears", value = '{{member.membershipYears}}' /><br>
       </form>
 
       <h2 style="color: red;">Return to Opening Page (<a href = "{{ url_for('opening2') }}">Return

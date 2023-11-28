@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>  <link href="/static/style.css" rel="stylesheet" type="text/css" />
+<head>
+  <link href="/static/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -16,11 +17,12 @@
   </div>
   {%- endfor %}
 
-  <div class="table-responsive">
-    <table class="table" style="width:100%">
+  <div class="table-container">
+    <table class="styled-table">
       <thead>
         <tr>
           <th>Name</th>
+          <th>Gender</th>
           <th>Membership Years</th>
           <th>Phone</th>
           <th>Status</th>
@@ -31,9 +33,10 @@
       </thead>
 
       <tbody>
-        {% for member in students %}
+        {% for member in members %}
         <tr>
           <td>{{ member.name }}</td>
+          <td>{{ member.gender }}</td>
           <td>{{ member.membershipYears }}</td>
           <td>{{ member.phone }}</td>
           <td>{{ member.status }}</td>
@@ -47,7 +50,6 @@
   </div>
 
   <h3>Add a New Member (<a href="{{ url_for('new') }}">Add Member</a>)</h3>
-
   <h3>Return to Opening Page (<a href="{{ url_for('opening2') }}">Return</a>)</h3>
 
 </body>
