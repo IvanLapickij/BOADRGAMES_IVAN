@@ -1,26 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 20px;
+      background-color: #f7f7f7; /* Add a light background color */
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    h3 {
+      color: red;
+    }
+
+    hr {
+      border: 1px solid #ccc;
+    }
+
+    .alert {
+      color: #721c24; /* Dark red text color for alerts */
+      background-color: #f8d7da; /* Light red background for alerts */
+      border: 1px solid #f5c6cb;
+      padding: 8px;
+      margin: 10px 0;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input[type="submit"] {
+      background-color: #007bff; /* Blue color for the submit button */
+      color: white;
+      padding: 10px 15px;
+      cursor: pointer;
+      border: none;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3; /* Darker blue color on hover */
+    }
+
+    a {
+      color: red;
+      text-decoration: none;
+    }
+  </style>
+</head>
 
 <body>
 
-  <h1>Members Table - Add Initial Data</h1>
-  <h3 style="color: red;">Please confirm that you want to add some initial data to the Members Table</h3>
+  <h1 style="text-align: center;">Members Table - Add Initial Data</h1>
+  <h3 style="color: red; text-align: center;">Please confirm that you want to add some initial data to the Members Table</h3>
 
   <hr/>
 
   {%- for category, message in get_flashed_messages(with_categories=true) %}
-  <div class="alert alert-danger">
+  <div class="alert">
     {{ message }}
   </div>
   {%- endfor %}
 
-  <form action="{{ request.path }}" method="post">
+  <form action="{{ request.path }}" method="post" style="text-align: center;">
     <input type="submit" value="Confirm Add Initial Data" class="btn btn-primary" />
-</form>
+  </form>
 
-  <h3>Return to Opening Page (<a href="{{ url_for('opening2') }}">Return</a>)</h3>
+  <h3 style="text-align: center;">Return to Opening Page (<a href="{{ url_for('index') }}">Return</a>)</h3>
 
 </body>
 
 </html>
-

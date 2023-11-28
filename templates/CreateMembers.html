@@ -1,6 +1,51 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 20px 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    .alert-danger {
+      color: #721c24;
+      background-color: #f8d7da;
+      border: 1px solid #f5c6cb;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
 <body>
 
   <h1>Add a Member</h1>
@@ -14,29 +59,29 @@
   {%- endfor %}
 
   <form action="{{ request.path }}" method="post">
-    <label for="name">Name</label><br>
-    <input type="text" name="name" placeholder="Ivan" /><br>
+    <label for="name">Name</label>
+    <input type="text" name="name" placeholder="Ivan" />
 
-    <label for="gender">Gender</label><br>
-    <input type="text" name="gender" placeholder="Male" /><br>
+    <label for="gender">Gender</label>
+    <input type="text" name="gender" placeholder="Male" />
 
-    <label for="membershipYears">Membership Years</label><br>
-    <input type="text" name="membershipYears" placeholder="12" /><br>
+    <label for="membershipYears">Membership Years</label>
+    <input type="text" name="membershipYears" placeholder="12" />
 
-    <label for="phone">Phone</label><br>
-    <input type="text" name="phone" placeholder="123456" /><br>
+    <label for="phone">Phone</label>
+    <input type="text" name="phone" placeholder="123456" />
 
-    <label for="status">Status</label><br>
-    <input type="text" name="status" placeholder="Pro" /><br>
+    <label for="status">Status</label>
+    <input type="text" name="status" placeholder="Pro" />
 
-    <label for="gamesWon">Games Won</label><br>
-    <input type="text" name="gamesWon" placeholder="112" /><br>
+    <label for="gamesWon">Games Won</label>
+    <input type="text" name="gamesWon" placeholder="112" />
 
-    <label for="favoriteGame">Favorite Game</label><br>
-    <input type="text" name="favoriteGame" placeholder="Chess" /><br>
+    <label for="favoriteGame">Favorite Game</label>
+    <input type="text" name="favoriteGame" placeholder="Chess" />
 
-    <label for="highestScore">Highest Score</label><br>
-    <input type="text" name="highestScore" placeholder="123" /><br>
+    <label for="highestScore">Highest Score</label>
+    <input type="text" name="highestScore" placeholder="123" />
 
     <input type="submit" value="Submit" />
   </form>

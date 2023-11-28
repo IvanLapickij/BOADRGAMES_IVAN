@@ -8,56 +8,115 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="preload" as="font">
   <link href="/static/cloud-run-32-color.png" rel="icon" type="image/png" />
   <link href="/static/style.css" rel="stylesheet" type="text/css" />
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 20px;
+    }
+
+    nav {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3 {
+      color: #333;
+    }
+
+    h2 {
+      color: red;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    a {
+      color: red;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
 
-  <h1>Welcome to BoardGames Club</h1>
-  <h2 style="color: red;">Please select from the available options</h2>
+  <nav>
+    <h2>Welcome to BoardGames Club</h2>
+    <h3>Please select from the available options</h3>
 
-  <h3>1. List All Members
-    <a href="{{ url_for('show_all') }}">List All Members</a>
-  </h3>
+    <h3>1. List All Members <a href="{{ url_for('read_all') }}">List All Members</a></h3>
 
-  <h3>2. Add a Member (<a href="{{ url_for('new') }}">Add Member</a>)</h3>
+    <h3>2. Add a Member (<a href="{{ url_for('new') }}">Add Member</a>)</h3>
 
-  <h3>3. Option to Insert Some Initial Table Data (<a href="{{ url_for('initial_table_data') }}">Add Initial Members</a>)</h3><br>
+    <h3>3. Option to Insert Some Initial Table Data (<a href="{{ url_for('initial_table_data') }}">Add Initial Members</a>)</h3>
 
-  <h2>4. Search Options</h2>
+    <h2>4. Search Options</h2>
 
-  <form action="{{ url_for('opening2') }}" method="post">
-    <label for="name">Name</label>
-    <input type="text" name="name" placeholder="Name" />
-    <input type="submit" name="Search_By_Name" value="Search By Name" /><br><br>
-  </form>
+    <form action="{{ url_for('index') }}" method="post">
+      <label for="name">Name</label>
+      <input type="text" name="name" placeholder="Name" />
+      <input type="submit" name="Search_By_Name" value="Search By Name" />
+    </form>
 
-  <form action="{{ url_for('opening2') }}" method="post">
-  <label for="gender">Gender</label>
-  <input type="text" name="gender" placeholder="Gender" />
-  <input type="submit" name="Search_By_gender" value="Search By Gender" /><br><br>
+    <form action="{{ url_for('index') }}" method="post">
+      <label for="gender">Gender</label>
+      <input type="text" name="gender" placeholder="Gender" />
+      <input type="submit" name="Search_By_gender" value="Search By Gender" />
+    </form>
+
+    <h2>5. Delete Option</h2>
+
+    <form action="{{ url_for('index') }}" method="post">
+      <label for="name">Name</label>
+      <input type="text" name="name" placeholder="Name" />
+      <input type="submit" name="Delete_Member" value="Delete Member" />
+    </form>
+
+    <h2>6. Update Option</h2>
+
+    <form action="{{ url_for('index') }}" method="post">
+      <label for="name">Name</label>
+      <input type="text" name="name" placeholder="Name" />
+      <input type="submit" name="Update_Member" value="Update Member" />
+    </form>
+
+<h2>7. Increment Membership Years Option</h2>
+
+<form action="{{ url_for('index') }}" method="post">
+  <label for="name">Name</label>
+  <input type="text" name="name" placeholder="Name" />
+  <input type="submit" name="increment_years" value="Increment Membership" />
 </form>
 
 
-  <h2>5. Delete Option</h2>
-  <form action="{{ url_for('opening2') }}" method="post">
-    <label for="name">Name</label>
-    <input type="text" name="name" placeholder="Name" />
-    <input type="submit" name="Delete_Member" value="Delete Member" /><br><br>
-  </form>
-
-  <h2>6. Update Option</h2>
-  <form action="{{ url_for('opening2') }}" method="post">
-    <label for="name">Name</label>
-    <input type="text" name="name" placeholder="Name" />
-    <input type="submit" name="Update_Member" value="Update Member" /><br><br>
-  </form>
-
-  <h2>7. Increment Membership Years Option</h2>
-  <form action="{{ url_for('opening2') }}" method="post">
-    <label for="name">Name</label>
-    <input type="text" name="name" placeholder="Name" />
-    <input type="submit" name="Increment_Member_Age" value="Increment Member Age" /><br><br>
-  </form>
 
 </body>
 
